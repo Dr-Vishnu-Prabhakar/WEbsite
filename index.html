@@ -110,6 +110,38 @@ footer a{text-decoration:none;color:#dbe6f0;margin-right:16px}
 footer a:hover{color:var(--gold)}
 footer .disc{margin-top:18px;border-top:1px solid #29406a;padding-top:16px;max-width:820px}
 
+
+/* paid course */
+.course{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+.badge{display:inline-block;background:var(--gold);color:var(--navy);font:700 13px var(--head);padding:5px 10px;border-radius:6px;margin-bottom:12px}
+.course h3{font-size:clamp(26px,3vw,34px);margin-bottom:10px}
+.course .sub{color:var(--muted);margin-bottom:20px}
+.preview{display:flex;align-items:center;gap:14px;background:var(--navy);color:#fff;border-radius:12px;padding:16px 20px;margin-bottom:20px;text-decoration:none}
+.preview .play{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:18px;flex:none}
+.preview b{display:block;font-family:var(--head)}
+.preview span{color:#c9d8e6;font-size:15px}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details ul{padding:0 18px 16px 38px;color:var(--muted);font-size:16px}
+details p{padding:0 18px 16px;color:var(--muted);font-size:16px}
+.buy{background:#fff;border:2px solid var(--navy);border-radius:14px;padding:26px;position:sticky;top:20px}
+.price{font:800 44px var(--head);color:var(--navy)}
+.price small{font:400 16px var(--body);color:var(--muted)}
+.buy ul{list-style:none;margin:16px 0 20px}
+.buy li{padding:6px 0 6px 26px;position:relative;font-size:16px}
+.buy li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
+.buy .btn{display:block;text-align:center}
+.buy .small{font-size:14px;color:var(--muted);margin-top:12px;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:34px 0}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}
+.steps b{display:block;font:700 16px var(--head);color:var(--teal-d);margin-bottom:4px}
+.steps p{font-size:16px;color:var(--muted)}
+.more-title{font-size:22px;margin:8px 0 14px}
+.login{border:1px solid #7f97b3;padding:6px 14px;border-radius:6px}
+@media (max-width:860px){.course,.steps{grid-template-columns:1fr}.buy{position:static}}
 @media (max-width:860px){
   .hero-grid,.about{grid-template-columns:1fr}
   .lesson{grid-template-columns:1fr}
@@ -165,6 +197,9 @@ footer .disc{margin-top:18px;border-top:1px solid #29406a;padding-top:16px;max-w
         <li><a href="#courses">Courses</a></li>
         <li><a href="#learn">Topics</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <!-- TODO: replace # with your members/course login page -->
+        <li><a class="login" href="#">Member login</a></li>
       </ul>
     </nav>
   </div>
@@ -198,16 +233,66 @@ footer .disc{margin-top:18px;border-top:1px solid #29406a;padding-top:16px;max-w
       <h2>Courses for beginners</h2>
       <p>Short video lessons with worksheets. Each course starts from zero and avoids jargon.</p>
     </div>
+
+    <div class="course">
+      <div>
+        <span class="badge">Featured course</span>
+        <h3>SIP and Mutual Funds, Step by Step</h3>
+        <p class="sub">Learn how SIPs and mutual funds work, what they cost, and how to plan your own savings goals, with simple examples in rupees.</p>
+
+        <!-- TODO: replace # with the link to your free preview video on YouTube -->
+        <a class="preview" href="#" target="_blank" rel="noopener">
+          <div class="play" aria-hidden="true">▶</div>
+          <div><b>Watch a free lesson</b><span>See my teaching style before you enroll</span></div>
+        </a>
+
+        <details open>
+          <summary>Module 1: Investing basics</summary>
+          <ul><li>What investing is, and why inflation matters</li><li>Risk and return in simple words</li><li>Why an emergency fund comes first</li></ul>
+        </details>
+        <details>
+          <summary>Module 2: Understanding mutual funds</summary>
+          <ul><li>What a mutual fund is and who manages it</li><li>Equity, debt, hybrid and index funds</li><li>NAV and expense ratio explained</li></ul>
+        </details>
+        <details>
+          <summary>Module 3: SIP step by step</summary>
+          <ul><li>How a SIP works month by month</li><li>The power of compounding, shown with the calculator</li><li>Choosing an amount and a time period</li></ul>
+        </details>
+        <details>
+          <summary>Module 4: Costs, taxes and mistakes</summary>
+          <ul><li>Direct and regular plans</li><li>Capital gains tax basics</li><li>Common beginner mistakes to avoid</li></ul>
+        </details>
+        <details>
+          <summary>Module 5: Your own plan</summary>
+          <ul><li>Setting goals and timelines</li><li>Reviewing your plan once a year</li><li>A simple worksheet to finish with</li></ul>
+        </details>
+      </div>
+
+      <aside class="buy" aria-label="Enroll">
+        <!-- TODO: set your own price -->
+        <div class="price">₹999 <small>one-time</small></div>
+        <ul>
+          <li>Short, easy video lessons</li>
+          <li>Practice worksheets</li>
+          <li>Email support for questions</li>
+        </ul>
+        <!-- TODO: replace # with your Razorpay Payment Page or Payment Link -->
+        <a class="btn btn-gold" href="#">Enroll now</a>
+        <p class="small">Secure payment with UPI, card or net banking. Education only, not investment advice.</p>
+      </aside>
+    </div>
+
+    <div class="steps">
+      <div><b>1. Pay securely</b><p>Choose Enroll now and pay with UPI, card or net banking.</p></div>
+      <div><b>2. Get your access email</b><p>You receive your login or lesson link by email.</p></div>
+      <div><b>3. Learn at your pace</b><p>Watch the lessons any time and use the worksheets.</p></div>
+    </div>
+
+    <h3 class="more-title">More courses coming</h3>
     <div class="lessons">
-      <!-- TODO: link each course to your payment page (Razorpay, Instamojo or a course platform) -->
       <div class="lesson">
         <div class="tag">Free</div>
         <div><h3>Money Basics for Beginners</h3><p>Budgeting, emergency funds and building a saving habit.</p></div>
-        <div class="status">Coming soon</div>
-      </div>
-      <div class="lesson">
-        <div class="tag">Course</div>
-        <div><h3>SIP and Mutual Funds, Step by Step</h3><p>What they are, how they work, and the costs to watch for.</p></div>
         <div class="status">Coming soon</div>
       </div>
       <div class="lesson">
@@ -250,6 +335,18 @@ footer .disc{margin-top:18px;border-top:1px solid #29406a;padding-top:16px;max-w
         <li>Examples with real numbers and clear assumptions</li>
         <li>Honest talk about risk</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2>Questions, answered</h2></div>
+    <div style="max-width:760px">
+      <details><summary>Who is the course for?</summary><p>Complete beginners. You don’t need any earlier knowledge of investing.</p></details>
+      <details><summary>How do I get access after paying?</summary><p>After payment you receive an email with your access details. <!-- TODO: write exactly how and when access is delivered --></p></details>
+      <details><summary>What is the refund policy?</summary><p><!-- TODO: write your own refund policy and link a full Refund Policy page -->Add your refund terms here.</p></details>
+      <details><summary>Is this investment advice?</summary><p>No. The course teaches how things work. It does not recommend any fund, stock or product, and it does not promise returns.</p></details>
     </div>
   </div>
 </section>
